@@ -1,6 +1,5 @@
 package task.dao;
 
-
 import task.model.Bet;
 
 import java.util.List;
@@ -9,7 +8,6 @@ import java.util.List;
 public interface BetDao {
 
     void add(Bet bet);
+
     List<Bet> getAll();
-
-
 }
