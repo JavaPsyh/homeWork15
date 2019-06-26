@@ -1,13 +1,14 @@
 package task.factory;
 
-import task.dao.HumanDao;
+import task.dao.GeneralizedDao;
 import task.dao.HumanDaoImpl;
+import task.model.Human;
 
 public class HumanDaoFactory {
 
-    private static HumanDao instance;
+    private static GeneralizedDao<Human> instance;
 
-    public static HumanDao getInstance() {
+    public static GeneralizedDao<Human> getInstance() {
         if (instance == null) {
             instance = new HumanDaoImpl();
         }

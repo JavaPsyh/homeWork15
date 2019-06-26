@@ -1,6 +1,6 @@
 package task.controller;
 
-import task.dao.HumanDao;
+import task.dao.GeneralizedDao;
 import task.lib.Inject;
 import task.model.Human;
 
@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class HumanHandler {
 
     @Inject
-    private static HumanDao humanDao;
+    private static GeneralizedDao<Human> humanDao;
 
     public static void handler() {
         try (Scanner scanner = new Scanner(System.in)) {

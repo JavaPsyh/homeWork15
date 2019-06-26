@@ -5,9 +5,9 @@ import task.model.Bet;
 import java.util.List;
 
 //НАШ КЛАСС ДЛЯ РАБОТЫ С БАЗОЙ ДАННЫХ И ТАБЛИЦОЙ СТАВОК
-public interface BetDao {
+public interface GeneralizedDao<T> {
 
-    void add(Bet bet);
+    void add(T t);
 
-    List<Bet> getAll();
+    List<T> getAll();
 }

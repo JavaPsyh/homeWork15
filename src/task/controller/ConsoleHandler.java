@@ -1,13 +1,13 @@
 package task.controller;
 
-import task.dao.BetDao;
+import task.dao.GeneralizedDao;
 import task.lib.Inject;
 import task.model.Bet;
 
 public class ConsoleHandler {
 
     @Inject
-    private static BetDao betDao;
+    private static GeneralizedDao<Bet> betDao;
 
     static public void handle() {
         int number = 4;
