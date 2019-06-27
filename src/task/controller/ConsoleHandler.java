@@ -1,35 +1,33 @@
 package task.controller;
 
-import task.dao.BetDao;
-import task.dao.BetDaoImpl;
-import task.factory.BetDaoFactory;
+import task.dao.GeneralizedDao;
 import task.lib.Inject;
 import task.model.Bet;
-
-import java.util.Scanner;
 
 public class ConsoleHandler {
 
     @Inject
-    private static BetDao betDao;
+    private static GeneralizedDao<Bet> betDao;
 
     static public void handle() {
-        try (Scanner scanner = new Scanner(System.in)) {
-            while (true) {
-                String command = scanner.nextLine();
-                if (command.equals("0")) {
-                    return;
-                }
-                String[] data = command.split(" ");
+        int number = 4;
+        while (true) {
+            if (number == 0) {
+                return;
+            }
+            String string = (number * 100) + " " + ((double) number / 10);
+            number--;
+            String[] data = string.split(" ");
+            try {
                 int value = Integer.parseInt(data[0]);
                 double risk = Double.parseDouble(data[1]);
                 Bet bet = new Bet(value, risk);
                 betDao.add(bet);
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Данные введены некорректно");
         }
+
     }
 }
 

@@ -1,15 +1,13 @@
 package task.dao;
 
-
 import task.model.Bet;
 
 import java.util.List;
 
 //НАШ КЛАСС ДЛЯ РАБОТЫ С БАЗОЙ ДАННЫХ И ТАБЛИЦОЙ СТАВОК
-public interface BetDao {
+public interface GeneralizedDao<T> {
 
-    void add(Bet bet);
-    List<Bet> getAll();
+    void add(T t);
 
-
+    List<T> getAll();
 }

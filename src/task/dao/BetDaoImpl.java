@@ -8,16 +8,14 @@ import java.util.List;
 
 //НАШ КЛАСС ДЛЯ РАБОТЫ С БАЗОЙ ДАННЫХ И ТАБЛИЦОЙ СТАВОК
 @Dao
-public class BetDaoImpl implements BetDao {
-
+public class BetDaoImpl implements GeneralizedDao<Bet> {
     @Override
     public void add(Bet bet) {
-        Storage.bets.add(bet);
+        Storage.BETS.add(bet);
     }
 
     @Override
     public List<Bet> getAll() {
-        return Storage.bets;
+        return Storage.BETS;
     }
-
 }

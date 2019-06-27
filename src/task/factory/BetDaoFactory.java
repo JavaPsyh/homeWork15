@@ -1,13 +1,14 @@
 package task.factory;
 
-import task.dao.BetDao;
+import task.dao.GeneralizedDao;
 import task.dao.BetDaoImpl;
+import task.model.Bet;
 
 public class BetDaoFactory {
 
-    private static BetDao instance;
+    private static GeneralizedDao<Bet> instance;
 
-    public static BetDao getBetDao() {
+    public static GeneralizedDao<Bet> getBetDao() {
         if (instance == null) {
             instance = new BetDaoImpl();
         }
